@@ -146,7 +146,8 @@ public class BakeryOrderForm extends Application {
                 sizeLabel,
                 smallSize, mediumSize, largeSize,
                 freeDeliveryCheckBox,
-                saveButton, clearButton);
+                saveButton, clearButton,
+                quitButton);
         Scene scene = new Scene(root, 400, 450);
         stage.setScene(scene);
         stage.show();
