@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -67,6 +68,7 @@ public class BakeryOrderForm extends Application {
         // Buttons for saving the order and clearing the form
         Button saveButton = new Button("Save Order");
         Button clearButton = new Button("Clear Form");
+        Button quitButton = new Button("Quit");
 
         saveButton.setOnAction(e -> {
             String name = nameField.getText().trim();
@@ -110,7 +112,7 @@ public class BakeryOrderForm extends Application {
             cakeComboBox.getSelectionModel().clearSelection();
             sizeGroup.selectToggle(null);
             freeDeliveryCheckBox.setSelected(false);
-            
+
             } catch (IOException ex) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setTitle("File Error");
@@ -126,6 +128,11 @@ public class BakeryOrderForm extends Application {
             cakeComboBox.getSelectionModel().clearSelection();
             sizeGroup.selectToggle(null);
             freeDeliveryCheckBox.setSelected(false);
+        });
+
+        // Quit button action to exit the application
+        quitButton.setOnAction(e -> {
+            Platform.exit();
         });
 
 
